@@ -18,6 +18,11 @@ def znak():
     return z
 
 
+def point():
+    x = i + 1
+    return x
+
+
 for i, d in enumerate(s):
 
     if d not in m:
@@ -30,13 +35,11 @@ for i, d in enumerate(s):
             continue  # - если цифра не последняя в строке, продолжаем итерацию
 
         if d == '-' or d == '+':  # - если строка начинается со знака + или - (i = 0)
-            if i == 0:
-                k = znak()
-                p = i + 1
-
-            else:  # - если знак между цифр
+            if i != 0: # - если знак между цифр
                 res += k * int(s[p:i])
                 k = znak()
-                p = i + 1
+            else:
+                k = znak()
+        p = point()
 
 print(res)
